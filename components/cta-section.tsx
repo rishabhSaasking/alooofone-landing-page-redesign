@@ -1,62 +1,65 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Globe, CheckCircle } from "lucide-react";
+import Image from "next/image"
+import { ArrowRight } from "lucide-react"
 
 export function CtaSection() {
   return (
-    <section className="py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl overflow-hidden bg-primary">
+    <section className="py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-primary">
+          {/* Background image overlay */}
           <div className="absolute inset-0 opacity-10">
             <Image
-              src="/images/person-calling.jpg"
+              src="/images/person-phone-call.jpg"
               alt="Background"
               fill
               className="object-cover"
             />
           </div>
-          <div className="relative py-16 md:py-24 px-8 md:px-16 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-6 text-balance">
-              Revolutionize your call operations with alooofone
+          
+          {/* Content */}
+          <div className="relative px-8 py-20 text-center md:px-16 md:py-28">
+            <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl">
+              Ready to transform your customer conversations?
             </h2>
-            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10">
-              Start building smarter conversations today. Deploy in days, not
-              months.
+            <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80">
+              Start building smarter conversations today. Deploy in days, not months.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="rounded-full gap-2"
+            
+            {/* CTA Buttons */}
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href="#"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-card px-8 py-4 text-base font-medium text-foreground transition-all hover:bg-card/90"
               >
                 Start Free Trial
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center rounded-full border border-primary-foreground/30 px-8 py-4 text-base font-medium text-primary-foreground transition-all hover:bg-primary-foreground/10"
               >
                 Contact Sales
-              </Button>
+              </a>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-6 text-primary-foreground/70 text-sm">
+
+            {/* Trust badges */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-primary-foreground/70">
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4" />
+                <div className="h-1.5 w-1.5 rounded-full bg-primary-foreground/70" />
                 No credit card required
               </div>
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
+                <div className="h-1.5 w-1.5 rounded-full bg-primary-foreground/70" />
                 SOC 2 Type II certified
               </div>
               <div className="flex items-center gap-2">
-                <Globe className="w-4 h-4" />
-                EU sovereignty nodes
+                <div className="h-1.5 w-1.5 rounded-full bg-primary-foreground/70" />
+                GDPR compliant
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
